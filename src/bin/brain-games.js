@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-import index from '..';
+import { startFunc } from '..';
+startFunc();
