@@ -14,7 +14,7 @@
     "babel-node": "babel-node ",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "Tungatarov Meirambek",
   "license": "ISC",
