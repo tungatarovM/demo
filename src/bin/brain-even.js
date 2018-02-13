@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import authentification from '../index';
+import { authentification, isEvenGame } from '../index';
 
 
 authentification();
+isEvenGame();
