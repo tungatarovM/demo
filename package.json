@@ -1,6 +1,6 @@
 {
   "name": "tungatarov-brain-games",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "brain-games project",
   "main": "src/bin/brain-games.js",
   "bin": {
