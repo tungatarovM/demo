@@ -14,8 +14,8 @@ const isEvenGame = (userName) => {
       return `Congratulations ${userName}`;
     }
     const randomNum = Math.random();
-    console.log('Question: num');
-    const answer = readlineSync.question(`Question: ${randomNum}`);
+    console.log(`Question: ${randomNum}`);
+    const answer = readlineSync.question('Your answer? ');
     if (isEven(randomNum)) {
       if (answer === 'yes') return iter(points + 1);
       return `${answer} is wrong answer ;(. Correct answer was 'yes'. 

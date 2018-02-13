@@ -7,5 +7,5 @@ const authentification = () => {
   console.log(`Hi ${userName}`);
   return userName;
 };
-export default authentification;
 
+export default authentification;
