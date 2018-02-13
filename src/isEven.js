@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 
 
-
 const isEven = (num) => {
   if (num % 2 === 0) {
     return true;
@@ -21,8 +20,7 @@ const isEvenGame = (userName) => {
       if (answer === 'yes') return iter(points + 1);
       return `${answer} is wrong answer ;(. Correct answer was 'yes'. 
               Let's try again, ${userName}!`;
-    }
-    if (!isEven(randomNum)) {
+    } else if (!isEven(randomNum)) {
       if (answer === 'no') {
         return iter(points + 1);
       }
