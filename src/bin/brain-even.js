@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import { authentification, isEvenGame } from '../index';
+import { brainEven } from '../index';
 
-
-authentification();
-isEvenGame();
+console.log('Welcome to the Brain Games!');
+brainEven();
