@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const succesPoints = 2;
+export const successPoints = 2;
 
 export const greeting = () => console.log('Welcome to the Brain Games!');
 

@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 import { random, randomOperator, signChecker, prompt, isCorrect, isEven } from '../toolkit/tools';
-import { startGame, succesPoints, correctMessage, wrongMessage, successMessage } from '../index';
+import { startGame, successPoints, correctMessage, wrongMessage, successMessage } from '../index';
 
 const rule = 'Answer "yes" if number even otherwise answer "no".';
 
 export const even = (userName) => {
   const iter = (points) => {
-    if (points > succesPoints) {
+    if (points > successPoints) {
       return successMessage(userName);
     }
     const randomNumber = random();
