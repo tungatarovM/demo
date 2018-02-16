@@ -31,9 +31,7 @@ export const increasingOrder = (firstNum, secondNum) => {
   return [secondNum, firstNum];
 };
 
-export const greatestCommonDivFinder = (smallNum, biggerNum) => {
-  if (biggerNum === 0) {
-    return smallNum;
-  }
-  return greatestCommonDivFinder(smallNum, biggerNum % smallNum);
+export const euclidsAlg = (smallNum, biggerNum) => {
+  const remainder = smallNum % biggerNum;
+  return remainder === 0 ? biggerNum : euclidsAlg(biggerNum, remainder);
 };

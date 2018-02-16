@@ -9,13 +9,17 @@ export const authentification = () => {
   console.log(`Hi ${userName}`);
   return userName;
 };
+
 const showRules = (gameData) => {
   const [rule] = gameData();
   console.log(rule);
 };
-export const successMessage = userName => console.log(`Congratulations ${userName}`);
-export const correctMessage = () => console.log('Correct');
-export const wrongMessage = (correctAnswer, answer) => {
+
+const successMessage = userName => console.log(`Congratulations ${userName}`);
+
+const correctMessage = () => console.log('Correct');
+
+const wrongMessage = (correctAnswer, answer) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again`);
 };
 
