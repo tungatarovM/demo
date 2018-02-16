@@ -12,5 +12,6 @@
       consistent-return: 0
       import/prefer-default-export: 0
       no-unused-vars: 0
+      eqeqeq: 0
         
     
