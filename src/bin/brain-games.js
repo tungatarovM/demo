@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { authentification } from '..';
+import { greeting, authentification } from '..';
 
+greeting();
 authentification();

@@ -1,26 +1,16 @@
 import readlineSync from 'readline-sync';
-import { random, randomOperator, signChecker, prompt, isCorrect } from '../toolkit/tools';
-import { startGame, successPoints, correctMessage, wrongMessage, successMessage } from '../index';
+import { random, randomOperator, signChecker } from '../toolkit/tools';
+import { gameLogic } from '../index';
 
 
-const rule = 'What is the result of the expression?';
-
-export const calc = (userName) => {
-  const iter = (points) => {
-    if (points > successPoints) {
-      return successMessage(userName);
-    }
-    const firstNum = random();
-    const secondNum = random();
-    const operator = randomOperator();
-    const question = `Question: ${firstNum} ${operator} ${secondNum} \nYour answer: `;
-    const answer = prompt(question);
-    const correctAnswer = signChecker(firstNum, secondNum, operator);
-    if (isCorrect(correctAnswer, answer)) {
-      correctMessage();
-      return iter(points + 1);
-    }
-    return wrongMessage(correctAnswer, answer);
-  };
-  return iter(0);
+const gameData = () => {
+  const rule = 'What is the result of the expression?';
+  const firstNum = random();
+  const secondNum = random();
+  const operator = randomOperator();
+  const question = `Question: ${firstNum} ${operator} ${secondNum} \nYour answer: `;
+  const correctAnswer = signChecker(firstNum, secondNum, operator);
+  return [rule, question, correctAnswer];
 };
+
+export const calculator = () => gameLogic(gameData);

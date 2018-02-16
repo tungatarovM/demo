@@ -1,23 +1,14 @@
 import readlineSync from 'readline-sync';
-import { random, randomOperator, signChecker, prompt, isCorrect, isEven } from '../toolkit/tools';
-import { startGame, successPoints, correctMessage, wrongMessage, successMessage } from '../index';
+import { random, isEven } from '../toolkit/tools';
+import { gameLogic } from '../index';
 
-const rule = 'Answer "yes" if number even otherwise answer "no".';
 
-export const even = (userName) => {
-  const iter = (points) => {
-    if (points > successPoints) {
-      return successMessage(userName);
-    }
-    const randomNumber = random();
-    const question = `Question: ${randomNumber} \nYour answer: `;
-    const answer = prompt(question);
-    const correctAnswer = isEven(randomNumber);
-    if (isCorrect(correctAnswer, answer)) {
-      correctMessage();
-      return iter(points + 1);
-    }
-    return wrongMessage(correctAnswer, answer);
-  };
-  return iter(0);
+const gameData = () => {
+  const rule = 'Answer "yes" if number even otherwise answer "no".';
+  const randomNumber = random();
+  const question = `Question: ${randomNumber} \nYour answer: `;
+  const correctAnswer = isEven(randomNumber);
+  return [rule, question, correctAnswer];
 };
+
+export const even = () => gameLogic(gameData);

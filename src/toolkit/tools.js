@@ -17,18 +17,23 @@ export const signChecker = (firstNum, secondNum, sign) => {
   return firstNum * secondNum;
 };
 
-export const prompt = question => readlineSync.question(`${question}`);
-
-export const isCorrect = (correctAnswer, answer) => {
-  if (answer == correctAnswer) {
-    return true;
-  }
-  return false;
-};
-
 export const isEven = (num) => {
   if (num % 2 === 0) {
     return 'yes';
   }
   return 'no';
+};
+
+export const increasingOrder = (firstNum, secondNum) => {
+  if (firstNum < secondNum) {
+    return [firstNum, secondNum];
+  }
+  return [secondNum, firstNum];
+};
+
+export const greatestCommonDivFinder = (smallNum, biggerNum) => {
+  if (biggerNum === 0) {
+    return smallNum;
+  }
+  return greatestCommonDivFinder(smallNum, biggerNum % smallNum);
 };
