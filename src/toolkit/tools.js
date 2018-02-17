@@ -36,9 +36,9 @@ export const euclidsAlg = (smallNum, biggerNum) => {
   return remainder === 0 ? biggerNum : euclidsAlg(biggerNum, remainder);
 };
 
-export const maxNumberIndex = arrayOfNums =>
+export const getMaxDigitIndex = arrayOfNums =>
   arrayOfNums.reduce((acc, element, index) => (element > arrayOfNums[acc] ? index : acc), 0);
 
-export const minNumberIndex = arrayOfNums =>
+export const getMinDigitIndex = arrayOfNums =>
   arrayOfNums.reduce((acc, element, index) => (element < arrayOfNums[acc]), 0);
 
