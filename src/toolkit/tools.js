@@ -35,3 +35,10 @@ export const euclidsAlg = (smallNum, biggerNum) => {
   const remainder = smallNum % biggerNum;
   return remainder === 0 ? biggerNum : euclidsAlg(biggerNum, remainder);
 };
+
+export const maxNumberIndex = arrayOfNums =>
+  arrayOfNums.reduce((acc, element, index) => (element > arrayOfNums[acc] ? index : acc), 0);
+
+export const minNumberIndex = arrayOfNums =>
+  arrayOfNums.reduce((acc, element, index) => (element < arrayOfNums[acc]), 0);
+
