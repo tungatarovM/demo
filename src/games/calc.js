@@ -8,7 +8,7 @@ const gameData = () => {
   const firstNum = random();
   const secondNum = random();
   const operator = randomOperator();
-  const question = `Question: ${firstNum} ${operator} ${secondNum} \nYour answer: `;
+  const question = `${firstNum} ${operator} ${secondNum}`;
   const correctAnswer = signChecker(firstNum, secondNum, operator);
   return [rule, question, correctAnswer];
 };

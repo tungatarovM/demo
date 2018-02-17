@@ -8,7 +8,7 @@ const gameData = () => {
   const firstNum = random();
   const secondNum = random();
   const twoNums = increasingOrder(firstNum, secondNum);
-  const question = `Question: ${firstNum} ${secondNum}.\nYour answer: `;
+  const question = `${firstNum} ${secondNum}`;
   const correctAnswer = euclidsAlg(...twoNums);
   return [rule, question, correctAnswer];
 };

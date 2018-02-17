@@ -23,7 +23,7 @@ const wrongMessage = (correctAnswer, answer) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again`);
 };
 
-const prompt = question => readlineSync.question(question);
+const prompt = question => readlineSync.question(`Question:${question}\nYour answer: `);
 
 
 export const gameLogic = (game) => {

@@ -6,7 +6,7 @@ import { gameLogic } from '../index';
 const gameData = () => {
   const rule = 'Answer "yes" if number even otherwise answer "no".';
   const randomNumber = random();
-  const question = `Question: ${randomNumber} \nYour answer: `;
+  const question = `${randomNumber}`;
   const correctAnswer = isEven(randomNumber);
   return [rule, question, correctAnswer];
 };
