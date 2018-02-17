@@ -40,5 +40,5 @@ export const getMaxDigitIndex = arrayOfNums =>
   arrayOfNums.reduce((acc, element, index) => (element > arrayOfNums[acc] ? index : acc), 0);
 
 export const getMinDigitIndex = arrayOfNums =>
-  arrayOfNums.reduce((acc, element, index) => (element < arrayOfNums[acc]), 0);
+  arrayOfNums.reduce((acc, element, index) => (element < arrayOfNums[acc] ? index : acc), 0);
 

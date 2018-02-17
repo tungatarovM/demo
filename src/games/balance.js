@@ -1,16 +1,11 @@
 import { random, getMaxDigitIndex, getMinDigitIndex } from '../toolkit/tools';
 import { gameLogic } from '../index';
 
-const transform = (num) => {
-  const arrayOfNums = num.toString().split('').map(element => parseInt(element, 10));
-  return arrayOfNums;
-};
-
 const isBalanced = (arrayOfNums, maxDigitIndex, minDigitIndex) =>
   (arrayOfNums[maxDigitIndex] - arrayOfNums[minDigitIndex] <= 1);
 
-const balanceNumber = (arrayOfNums, maxDigitIndex, minDigitIndex) => {
-  return arrayOfNums.map((element, index) => {
+const balanceNumber = (arrayOfNums, maxDigitIndex, minDigitIndex) =>
+  arrayOfNums.map((element, index) => {
     if (index === minDigitIndex) {
       return element + 1;
     }
@@ -19,23 +14,27 @@ const balanceNumber = (arrayOfNums, maxDigitIndex, minDigitIndex) => {
     }
     return element;
   });
-};
 
-const getBalanceNumber = (arrayOfNums) => {
+const getBalancedNumber = (arrayOfNums) => {
   const maxDigitIndex = getMaxDigitIndex(arrayOfNums);
   const minDigitIndex = getMinDigitIndex(arrayOfNums);
   if (isBalanced(arrayOfNums, maxDigitIndex, minDigitIndex)) {
     return arrayOfNums;
   }
-  return getBalanceNumber(balanceNumber(arrayOfNums, maxDigitIndex, minDigitIndex));
+  return getBalancedNumber(balanceNumber(arrayOfNums, maxDigitIndex, minDigitIndex));
 };
 
+const getCorrectAnswer = (num) => {
+  const splitNumber = Array.from(num.toString()).map(item => Number(item));
+  const balancedNumber = getBalancedNumber(splitNumber);
+  return balancedNumber.sort().join('');
+};
 
 const gameData = () => {
   const rule = 'Balance the given number.';
-  const randomNum = random();
+  const randomNum = random(0, 1000);
   const question = `${randomNum}`;
-  const correctAnswer = getBalanceNumber(transform(randomNum));
+  const correctAnswer = getCorrectAnswer(randomNum);
   return [rule, question, correctAnswer];
 };
 
