@@ -22,7 +22,7 @@ const createSequence = (startNumber, range, blankNumIndex) => {
 };
 
 const createQuestion = sequence =>
-  sequence.reduce((acc, value) => (`${acc}, ${value}`), '');
+  sequence.reduce((acc, value) => (`${acc} ${value}`), '');
 
 const getCorrectAnswer = (sequence, range, blankNumIndex) => {
   if (blankNumIndex === 0) {
