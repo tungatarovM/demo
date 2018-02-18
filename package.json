@@ -1,6 +1,6 @@
 {
   "name": "tungatarov-brain-games",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "brain-games project",
   "main": "src/bin/brain-games.js",
   "bin": {
@@ -9,7 +9,8 @@
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
     "brain-balance": "dist/bin/brain-balance.js",
-    "brain-progression": "dist/bin/brain-progression.js"
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
   },
   "files": [
     "dist"
