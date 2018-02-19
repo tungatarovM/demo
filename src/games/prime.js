@@ -2,24 +2,25 @@ import { gameLogic } from '../index';
 import { random } from '../toolkit/tools';
 
 
-const getCorrectAnswer = (num) => {
+const isPrime = (num) => {
   const iter = (divisor) => {
     if (divisor > num / 2) {
-      return 'yes';
+      return true;
     }
     if (num % divisor === 0) {
-      return 'no';
+      return false;
     }
     return iter(divisor + 1);
   };
   return iter(2);
 };
 
+
 const gameData = () => {
   const rule = 'Is this number prime?';
   const num = random();
   const question = `${num}`;
-  const correctAnswer = getCorrectAnswer(num);
+  const correctAnswer = isPrime(num) ? 'yes' : 'no';
   return [rule, question, correctAnswer];
 };
 
